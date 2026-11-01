@@ -1,0 +1,545 @@
+
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 35px 5%;
+    background: #f9c6df;
+}
+
+/* Heading */
+
+.home h2 {
+    font-size: 34px;
+    color: #222;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* =========================
+   CREATE FORM
+========================= */
+
+.create_form {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 25px;
+}
+
+.create_form input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.create_form input:focus {
+    border-color: #6366f1;
+}
+
+.create_form button {
+    padding: 14px 25px;
+    background: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.create_form button:hover {
+    background: #4f46e5;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   STATISTICS
+========================= */
+
+.stats {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.stats div {
+    flex: 1;
+    max-width: 250px;
+    min-width: 140px;
+    text-align: center;
+    background: white;
+    padding: 16px 20px;
+    border-radius: 10px;
+    color: #333;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    padding: 13px 18px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 15px;
+}
+
+/* =========================
+   FILTER BUTTONS
+========================= */
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.filters button {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 7px;
+    background: white;
+    color: #444;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.filters button:hover,
+.filters button.active {
+    background: #6366f1;
+    color: white;
+}
+
+/* =========================
+   PDF ACTION BUTTONS
+========================= */
+
+.pdf-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    margin: 10px 0 25px;
+}
+
+.pdf-actions button,
+.preview-download {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.pdf-actions button:hover,
+.preview-download:hover {
+    background: #555;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   TODO TASK
+========================= */
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 900px;
+    min-height: 60px;
+    background: white;
+    color: #222;
+    padding: 12px 18px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+    transition: 0.3s;
+}
+
+.task:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+/* Checkbox */
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+}
+
+.checkbox .icon {
+    font-size: 19px;
+    cursor: pointer;
+    color: #6366f1;
+    flex-shrink: 0;
+}
+
+.checkbox p {
+    margin: 0;
+    font-size: 16px;
+    overflow-wrap: anywhere;
+}
+
+.checkbox .completed {
+    color: #16a34a;
+}
+
+/* Completed */
+
+.done {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* Edit Input */
+
+.checkbox input {
+    width: 100%;
+    min-width: 0;
+    padding: 9px;
+    border: 1px solid #6366f1;
+    border-radius: 6px;
+    outline: none;
+}
+
+/* Action Buttons */
+
+.task-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 12px;
+}
+
+.task-actions .icon {
+    cursor: pointer;
+    font-size: 19px;
+    color: #6366f1;
+    transition: 0.2s;
+}
+
+.task-actions .icon:hover {
+    transform: scale(1.2);
+}
+
+.task-actions .delete {
+    color: #ef4444;
+}
+
+.task-actions button {
+    padding: 8px 13px;
+    border: none;
+    border-radius: 5px;
+    background: #6366f1;
+    color: white;
+    cursor: pointer;
+}
+
+/* Empty State */
+
+.empty-state {
+    text-align: center;
+    color: #777;
+    margin-top: 30px;
+    padding: 30px;
+}
+
+/* =========================
+   PAGINATION
+========================= */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    margin: 30px 0;
+}
+
+.pagination button {
+    min-width: 42px;
+    padding: 11px 16px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    cursor: pointer;
+    background: white;
+    color: #333;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.pagination button.active {
+    background: #6366f1;
+    color: white;
+    border-color: #6366f1;
+}
+
+.pagination button:hover:not(:disabled) {
+    background: #4f46e5;
+    color: white;
+}
+
+.pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* =========================
+   PDF PREVIEW MODAL
+========================= */
+
+.pdf-modal {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 15px;
+}
+
+.pdf-modal-content {
+    background: white;
+    width: 100%;
+    max-width: 1200px;
+    height: 95vh;
+    padding: 18px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pdf-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pdf-modal-header h3 {
+    color: #222;
+    font-size: 22px;
+}
+
+.pdf-modal-header button {
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.pdf-frame {
+    width: 100%;
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.preview-download {
+    align-self: center;
+}
+
+/* =========================
+   PRINT AREA
+========================= */
+
+.print-area {
+    display: none;
+}
+
+@media print {
+
+    body * {
+        visibility: hidden;
+    }
+
+    #printable-todo,
+    #printable-todo * {
+        visibility: visible;
+    }
+
+    #printable-todo {
+        display: block !important;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding: 20px;
+        color: black;
+        background: white;
+        font-family: Arial, sans-serif;
+    }
+
+    #printable-todo h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    #printable-todo h3 {
+        margin-top: 25px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 8px;
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .home {
+        padding: 25px 12px;
+    }
+
+    .home h2 {
+        font-size: 27px;
+    }
+
+    .create_form {
+        gap: 6px;
+    }
+
+    .create_form input {
+        padding: 11px;
+        font-size: 14px;
+    }
+
+    .create_form button {
+        padding: 11px 14px;
+    }
+
+    .stats {
+        gap: 8px;
+    }
+
+    .stats div {
+        min-width: 100px;
+        padding: 12px 8px;
+        font-size: 13px;
+    }
+
+    .search-box {
+        padding: 12px;
+    }
+
+    .filters {
+        gap: 7px;
+    }
+
+    .filters button {
+        padding: 9px 13px;
+    }
+
+    .pdf-actions {
+        flex-direction: column;
+    }
+
+    .pdf-actions button {
+        width: 100%;
+    }
+
+    .task {
+        padding: 11px;
+    }
+
+    .checkbox p {
+        font-size: 14px;
+    }
+
+    .task-actions {
+        gap: 10px;
+    }
+
+    .pdf-modal {
+        padding: 5px;
+    }
+
+    .pdf-modal-content {
+        height: 95vh;
+        padding: 10px;
+    }
+
+    .pdf-modal-header h3 {
+        font-size: 18px;
+    }
+
+    .pagination {
+        gap: 5px;
+    }
+
+    .pagination button {
+        padding: 9px 11px;
+        min-width: 35px;
+    }
+}
